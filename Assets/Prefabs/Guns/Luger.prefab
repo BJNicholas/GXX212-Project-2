@@ -104,15 +104,15 @@ MonoBehaviour:
   gunName: Luger
   fireSound: {fileID: 8300000, guid: 0e8aecd09027d424d9f77122e4dd934f, type: 3}
   emptySound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
-  reloadSound: {fileID: 0}
-  auto: 0
+  reloadSound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
+  auto: 1
   totalAmmo: 100
   magAmmo: 8
   maxMagAmmo: 8
   range: 50
-  damage: 50
+  damage: 500
   aimSpeed: 10
-  fireRate: 80
+  fireRate: 40
   isAiming: 0
 --- !u!114 &7300950927216783289
 MonoBehaviour:

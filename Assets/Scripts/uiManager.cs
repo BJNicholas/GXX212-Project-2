@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class uiManager : MonoBehaviour
 {
     public static uiManager instance;
+    public GameObject playerHand;
+    public GameObject toolBar;
     public GameObject inventoryMenu;
 
     private void Start()
@@ -32,6 +34,8 @@ public class uiManager : MonoBehaviour
         }
         else
         {
+            playerHand.SetActive(false);
+            toolBar.SetActive(false);
             menu.SetActive(true);
             Camera.main.GetComponent<MouseLook>().enabled = false;
             Cursor.lockState = CursorLockMode.Confined;
@@ -40,6 +44,8 @@ public class uiManager : MonoBehaviour
     }
     public void CloseMenu(GameObject menu)
     {
+        playerHand.SetActive(true);
+        toolBar.SetActive(true);
         print("CLOSE");
         Camera.main.GetComponent<MouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

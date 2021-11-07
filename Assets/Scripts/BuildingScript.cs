@@ -20,6 +20,8 @@ public class BuildingScript : MonoBehaviour
     {
         if(selectedItem != null)
         {
+            uiManager.instance.playerHand.SetActive(false);
+            uiManager.instance.toolBar.SetActive(false);
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
             Vector3 point;
@@ -67,6 +69,8 @@ public class BuildingScript : MonoBehaviour
     }
     public void PlaceObject()
     {
+        uiManager.instance.playerHand.SetActive(true);
+        uiManager.instance.toolBar.SetActive(true);
         selectedItem.GetComponentInChildren<MeshRenderer>().sharedMaterial = reg;
         Collider col = selectedItem.GetComponentInChildren(typeof(Collider)) as Collider;
         col.enabled = true;

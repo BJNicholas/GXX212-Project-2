@@ -55,16 +55,17 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\uiManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\CraftingItem.cs" />
     <Compile Include="Assets\Scripts\ZombieScript.cs" />
-    <Compile Include="Assets\Scripts\GunScript.cs" />
-    <Compile Include="Assets\Scripts\BuildingScript.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
-    <Compile Include="Assets\Scripts\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\GunScript.cs" />
     <Compile Include="Assets\Scripts\Toolbar.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\BuildingScript.cs" />
+    <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

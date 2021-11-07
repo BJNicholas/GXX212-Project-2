@@ -35,8 +35,9 @@ public class GunScript : MonoBehaviour
                 {
                     Fire();
                 }
-                if(magAmmo <= 0)
+                if(magAmmo <= 0 && coolDown >= fireRate)
                 {
+                    coolDown = 0;
                     print("OUT OF AMMO");
                     anim.Play(gunName + "-Empty");
                     GetComponent<AudioSource>().clip = emptySound;
