@@ -10,7 +10,8 @@ public class Item : MonoBehaviour
     {
         Resources,
         Structures,
-        Tools
+        Tools,
+        Guns
     }
     public itemTypes type;
 }

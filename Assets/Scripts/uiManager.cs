@@ -11,6 +11,8 @@ public class uiManager : MonoBehaviour
     private void Start()
     {
         instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         inventoryMenu.SetActive(false); //Do this for all menus on start
     }
 
@@ -41,7 +43,7 @@ public class uiManager : MonoBehaviour
         print("CLOSE");
         Camera.main.GetComponent<MouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.visible = false;
         menu.SetActive(false);
     }
 }

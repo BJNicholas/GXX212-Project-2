@@ -21,7 +21,7 @@ public class Toolbar : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
                 equippedSlot += 1;
                 if (equippedSlot >= slots.ToArray().Length)
@@ -29,7 +29,7 @@ public class Toolbar : MonoBehaviour
                     equippedSlot = 0;
                 }
             }
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
                 equippedSlot -= 1;
                 if (equippedSlot < 0)
