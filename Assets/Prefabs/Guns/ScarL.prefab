@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 586594358435769712}
+  bulletHole: {fileID: 9219050769974113016, guid: 5bd78a0a0f6ba464483e86711a3844ae, type: 3}
   hip: {fileID: 0}
   ads: {fileID: 0}
   gunName: ScarL
@@ -322,8 +323,8 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
   auto: 1
   totalAmmo: 100
-  magAmmo: 20
-  maxMagAmmo: 20
+  magAmmo: 100
+  maxMagAmmo: 100
   range: 100
   damage: 75
   aimSpeed: 10

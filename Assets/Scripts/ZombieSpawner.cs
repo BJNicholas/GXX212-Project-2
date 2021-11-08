@@ -23,7 +23,6 @@ public class ZombieSpawner : MonoBehaviour
 
     public void SpawnZombie()
     {
-        GameObject zombie = Instantiate(zombiePrefab);
-        zombie.transform.position = gameObject.transform.position;
+        GameObject zombie = Instantiate(zombiePrefab, transform);
     }
 }
