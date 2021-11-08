@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     public CharacterController controller;
 
-    public float speed;
+    float speed;
     public float gravity = -9.81f;
     public float jumpHeight;
     Vector3 velocity;
@@ -26,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 10;
+        }
+        else
+        {
+            speed = 5;
+        }
 
         if(isGrounded && velocity.y < 0)
         {
