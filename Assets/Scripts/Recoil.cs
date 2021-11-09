@@ -6,8 +6,6 @@ public class Recoil : MonoBehaviour
     Vector3 currentRotation;
     Vector3 targetRotation;
 
-    public Vector3 recoil;
-
     [Header("Settings")]
     public float snappiness;
     public float returnSpeed;
@@ -25,7 +23,7 @@ public class Recoil : MonoBehaviour
         transform.localRotation = Quaternion.Euler(currentRotation);
     }
 
-    public void RecoilFire()
+    public void RecoilFire(Vector3 recoil)
     {
         targetRotation += new Vector3(recoil.x, Random.Range(-recoil.y, recoil.y), Random.Range(-recoil.z, recoil.z));
     }

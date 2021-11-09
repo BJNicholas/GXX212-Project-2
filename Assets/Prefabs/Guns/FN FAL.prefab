@@ -140,6 +140,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 0e8aecd09027d424d9f77122e4dd934f, type: 3}
   emptySound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
   reloadSound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
+  recoil: {x: -3, y: 3, z: 0.5}
   auto: 0
   totalAmmo: 100
   magAmmo: 20
@@ -175,7 +176,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.767
+  m_Volume: 0.409
   m_Pitch: 1
   Loop: 0
   Mute: 0

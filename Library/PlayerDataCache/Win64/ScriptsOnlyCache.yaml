@@ -9,17 +9,25 @@ ScriptsOnlyBuild:
     - Item
     - MouseLook
     - PlayerMovement
+    - Recoil
     - Resource
     - Toolbar
+    - ZombieScript
+    - ZombieSpawner
     - uiManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    Unity.TerrainTools.Editor.dll:
+    - UnityEditor.Experimental.TerrainAPI.BillowNoise
+    - UnityEditor.Experimental.TerrainAPI.FbmFractalType
+    - UnityEditor.Experimental.TerrainAPI.NoiseBlitShaderGenerator
+    - UnityEditor.Experimental.TerrainAPI.NoiseFillShaderGenerator
+    - UnityEditor.Experimental.TerrainAPI.NoneFractalType
+    - UnityEditor.Experimental.TerrainAPI.PerlinNoise
+    - UnityEditor.Experimental.TerrainAPI.RidgeNoise
+    - UnityEditor.Experimental.TerrainAPI.StrataFractalType
+    - UnityEditor.Experimental.TerrainAPI.ValueNoise
+    - UnityEditor.Experimental.TerrainAPI.VoronoiNoise
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -61,56 +69,72 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1474}
+      Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1788}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 1934}
+      Script: {instanceID: 2058}
     - Class: 114
-      Script: {instanceID: 1950}
+      Script: {instanceID: 2074}
     - Class: 114
-      Script: {instanceID: 2078}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2380}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2678}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2868}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 2750}
-    - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2954}
     - Class: 114
       Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 3346}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3400}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 3520}
+      Script: {instanceID: 3536}
     - Class: 114
-      Script: {instanceID: 3744}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3700}
     - Class: 114
-      Script: {instanceID: 4184}
+      Script: {instanceID: 3828}
+    - Class: 114
+      Script: {instanceID: 4074}
+    - Class: 114
+      Script: {instanceID: 4252}
+    - Class: 114
+      Script: {instanceID: 4280}
+    - Class: 114
+      Script: {instanceID: 4564}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -123,9 +147,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 193
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 208
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -206,7 +238,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 3ae08ad2ac99d642c0c59a0e3917a297
+      Hash: 54aa86818bdff166c20fd02fa74204f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: uiManager
@@ -218,7 +250,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 8d5675c25f8bd24381eb201bdd74bdce
+      Hash: 3fcd92ca2e185ce740076f08a199bf9d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -252,6 +284,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventoryManager
+  - hash:
+      serializedVersion: 2
+      Hash: 4c11ac8a43930d2850ad82497b69a35e
+    assemblyName: Unity.TerrainTools.dll
+    namespaceName: 
+    className: TerrainGroup
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -306,6 +344,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 92fe3fb91c82cb0bb4200033cbd3793a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ZombieSpawner
   - hash:
       serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
@@ -476,6 +520,12 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 13e22b494eec27d9cfde697f4dccc527
+    assemblyName: Unity.TerrainTools.dll
+    namespaceName: UnityEngine.Experimental.TerrainAPI
+    className: TerrainGizmos
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -572,7 +622,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: ec1369ce913ad2277460784cf258cac4
+      Hash: 288449602bb2e35081002d99445acdf8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunScript
@@ -600,6 +650,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Toolbar
+  - hash:
+      serializedVersion: 2
+      Hash: b165b67bfbccc8ed160060e4b3fcd2e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Recoil
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
@@ -633,4 +689,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Test.unity
-  playerPath: C:/Users/Blake/Desktop/HOMEMADE GAMES/Feed the Night/Prototype/GXX212-Project-2.exe
+  playerPath: C:/Users/Blake/Desktop/HOMEMADE GAMES/Bin Night/Pitch Prototype/Bin
+    Night.exe

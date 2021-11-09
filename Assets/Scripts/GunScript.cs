@@ -13,6 +13,7 @@ public class GunScript : MonoBehaviour
     public AudioClip emptySound;
     public AudioClip reloadSound;
     [Header("STATS")]
+    public Vector3 recoil = new Vector3(-2,2,0.35f);
     public bool auto = false;
     public float totalAmmo, magAmmo, maxMagAmmo, range, damage, aimSpeed = 10f, fireRate;
     [HideInInspector]public bool isAiming = false;
@@ -83,7 +84,7 @@ public class GunScript : MonoBehaviour
 
     void Fire()
     {
-        Recoil.instance.RecoilFire();
+        Recoil.instance.RecoilFire(recoil);
         coolDown = 0;
         magAmmo -= 1;
         RaycastHit hit;

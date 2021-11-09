@@ -323,8 +323,8 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
   auto: 1
   totalAmmo: 100
-  magAmmo: 100
-  maxMagAmmo: 100
+  magAmmo: 20
+  maxMagAmmo: 20
   range: 100
   damage: 75
   aimSpeed: 10
@@ -356,7 +356,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.669
+  m_Volume: 0.409
   m_Pitch: 1
   Loop: 0
   Mute: 0
