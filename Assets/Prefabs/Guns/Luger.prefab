@@ -114,7 +114,7 @@ MonoBehaviour:
   range: 50
   damage: 500
   aimSpeed: 10
-  fireRate: 40
+  fireRate: 15
   isAiming: 0
 --- !u!114 &7300950927216783289
 MonoBehaviour:

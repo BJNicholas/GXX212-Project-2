@@ -6,50 +6,62 @@ public class GunScript : MonoBehaviour
 {
     public GameObject barrel;
     public GameObject bulletHole;
-    [HideInInspector]public Transform hip, ads;
+    [HideInInspector] public Transform hip, ads;
     public string gunName;
     [Header("Audio")]
     public AudioClip fireSound;
     public AudioClip emptySound;
     public AudioClip reloadSound;
     [Header("STATS")]
-    public Vector3 recoil = new Vector3(-2,2,0.35f);
+    public Vector3 recoil = new Vector3(-2, 2, 0.35f);
     public bool auto = false;
     public float totalAmmo, magAmmo, maxMagAmmo, range, damage, aimSpeed = 10f, fireRate;
-    [HideInInspector]public bool isAiming = false;
+    [HideInInspector] public bool isAiming = false;
     Animator anim;
+    float coolDown;
+    [HideInInspector] public bool shooting = false;
     private void Start()
     {
+        coolDown = fireRate;
         anim = GetComponent<Animator>();
         hip = transform.parent;
         ads = transform.parent.parent.Find("ADS");
     }
-    float coolDown = 0;
-    private void Update()
+    private void FixedUpdate()
     {
         coolDown += 1;
+        if (shooting)
+        {
+            recoil = Vector3.zero;
+        }
+    }
+    private void Update()
+    {
         //fire()
         if (auto)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) || shooting)
             {
-                if(magAmmo > 0 && coolDown >= fireRate)
+                if (magAmmo > 0 && coolDown >= fireRate)
                 {
                     Fire();
                 }
-                if(magAmmo <= 0 && coolDown >= fireRate)
+                if (magAmmo <= 0 && coolDown >= fireRate)
                 {
-                    coolDown = 0;
-                    print("OUT OF AMMO");
-                    anim.Play(gunName + "-Empty");
-                    GetComponent<AudioSource>().clip = emptySound;
-                    GetComponent<AudioSource>().Play();
+                    if (!shooting)
+                    {
+                        coolDown = 0;
+                        print("OUT OF AMMO");
+                        anim.Play(gunName + "-Empty");
+                        GetComponent<AudioSource>().clip = emptySound;
+                        GetComponent<AudioSource>().Play();
+                    }
                 }
             }
         }
         else
         {
-            if (Input.GetMouseButtonDown(0) && coolDown >= fireRate)
+            if ((Input.GetMouseButtonDown(0) && coolDown >= fireRate) || shooting && coolDown >= fireRate)
             {
                 if (magAmmo > 0)
                 {
@@ -57,10 +69,13 @@ public class GunScript : MonoBehaviour
                 }
                 else
                 {
-                    print("OUT OF AMMO");
-                    anim.Play(gunName + "-Empty");
-                    GetComponent<AudioSource>().clip = emptySound;
-                    GetComponent<AudioSource>().Play();
+                    if (!shooting)
+                    {
+                        print("OUT OF AMMO");
+                        anim.Play(gunName + "-Empty");
+                        GetComponent<AudioSource>().clip = emptySound;
+                        GetComponent<AudioSource>().Play();
+                    }
                 }
             }
         }
@@ -82,7 +97,7 @@ public class GunScript : MonoBehaviour
         }
     }
 
-    void Fire()
+    public void Fire()
     {
         Recoil.instance.RecoilFire(recoil);
         coolDown = 0;
@@ -112,7 +127,7 @@ public class GunScript : MonoBehaviour
         barrel.GetComponent<ParticleSystem>().Play();
     }
 
-    void Reload()
+    public void Reload()
     {
         anim.Play(gunName + "-Reload");
         GetComponent<AudioSource>().clip = reloadSound;

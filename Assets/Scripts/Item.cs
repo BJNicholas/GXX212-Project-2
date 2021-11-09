@@ -14,4 +14,12 @@ public class Item : MonoBehaviour
         Guns
     }
     public itemTypes type;
+
+    private void Start()
+    {
+        if (type == itemTypes.Structures)
+        {
+            gameObject.AddComponent<Structure>();
+        }
+    }
 }

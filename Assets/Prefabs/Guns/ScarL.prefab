@@ -321,6 +321,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 0e8aecd09027d424d9f77122e4dd934f, type: 3}
   emptySound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
   reloadSound: {fileID: 8300000, guid: f9d74ae89a867ba41bdd71e1cf4fcbef, type: 3}
+  recoil: {x: -2, y: 2, z: 0.35}
   auto: 1
   totalAmmo: 100
   magAmmo: 20
@@ -328,8 +329,9 @@ MonoBehaviour:
   range: 100
   damage: 75
   aimSpeed: 10
-  fireRate: 15
+  fireRate: 5
   isAiming: 0
+  shooting: 0
 --- !u!114 &3489012863304629330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,9 +365,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.89
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -400,7 +402,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -415,7 +417,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.033333335
       inSlope: 0
       outSlope: 0
       tangentMode: 0
