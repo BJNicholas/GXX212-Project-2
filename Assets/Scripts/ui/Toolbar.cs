@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Toolbar : MonoBehaviour
 {
     public static Toolbar instance;
-    public GameObject hand;
+    public GameObject toolSlot;
     [Header("INFO")]
     public List<GameObject> slots;
     public int equippedSlot = 0;
@@ -44,9 +44,9 @@ public class Toolbar : MonoBehaviour
     void UpdateEquippedSlot()
     {
         //All about spawing in tools
-        if (hand.transform.childCount > 0)
+        if (toolSlot.transform.childCount > 0)
         {
-            Destroy(hand.transform.GetChild(0).gameObject);
+            Destroy(toolSlot.transform.GetChild(0).gameObject);
         }
         //if slot selected has no item
         if (slots.ToArray()[equippedSlot].GetComponent<InventorySlot>().storedItem == null)
@@ -55,7 +55,7 @@ public class Toolbar : MonoBehaviour
         }
         else
         {
-            GameObject newTool = Instantiate(slots.ToArray()[equippedSlot].GetComponent<InventorySlot>().storedItem, hand.transform);
+            GameObject newTool = Instantiate(slots.ToArray()[equippedSlot].GetComponent<InventorySlot>().storedItem, toolSlot.transform);
         }
 
 

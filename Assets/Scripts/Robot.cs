@@ -7,23 +7,21 @@ public class Robot : MonoBehaviour
 {
     public MinionManager.states currentState;
     NavMeshAgent navAgent;
-    public GameObject hand;
+    public GameObject gun;
+    [HideInInspector]GameObject targetZombie;
     bool reloading = false;
-    [Header("Stats")]
-    public float health = 100;
 
     private void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
-        hand.transform.GetChild(0).gameObject.GetComponent<AudioSource>().volume = 0.1f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         RaycastHit hit;
         Vector3 point;
-        Debug.DrawRay(hand.transform.position, hand.transform.forward, Color.red, 1);
-        if (Physics.Raycast(hand.transform.position, hand.transform.forward, out hit, 100))
+        Debug.DrawRay(gun.transform.position, gun.transform.forward, Color.red, 1);
+        if (Physics.Raycast(gun.transform.position, gun.transform.forward, out hit, 500))
         {
             //the point exactly where the cast hit
             point = hit.point;
@@ -31,11 +29,11 @@ public class Robot : MonoBehaviour
             //if hit zombie
             if (hit.transform.gameObject.tag == "Zombie")
             {
-                hand.transform.GetChild(0).gameObject.GetComponent<GunScript>().shooting = true;
+                gun.GetComponent<RobotGun>().shooting = true;
             }
             else
             {
-                hand.transform.GetChild(0).gameObject.GetComponent<GunScript>().shooting = false;
+                gun.GetComponent<RobotGun>().shooting = false;
             }
         }
         if (currentState == MinionManager.states.idle)
@@ -49,6 +47,10 @@ public class Robot : MonoBehaviour
         else if (currentState == MinionManager.states.attacking)
         {
             Attack();
+        }
+        else if (currentState == MinionManager.states.defending)
+        {
+            Defend();
         }
     }
 
@@ -66,9 +68,9 @@ public class Robot : MonoBehaviour
     }
     void Attack()
     {
+        targetZombie = null;
         GameObject[] allZombies = GameObject.FindGameObjectsWithTag("Zombie");
-        GameObject targetZombie = null;
-        float closestDistance = 5000;
+        float closestDistance = Mathf.Infinity;
         foreach(GameObject zombie in allZombies)
         {
             if(Vector3.Distance(gameObject.transform.position, zombie.transform.position) <= closestDistance)
@@ -77,30 +79,52 @@ public class Robot : MonoBehaviour
                 closestDistance = Vector3.Distance(gameObject.transform.position, zombie.transform.position);
             }
         }
-        if (targetZombie != null && Vector3.Distance(gameObject.transform.position, targetZombie.transform.position) <= 10)
+        if (targetZombie != null)
         {
-            navAgent.SetDestination(targetZombie.transform.position);
+            navAgent.SetDestination((targetZombie.transform.position) - ((targetZombie.transform.position - gameObject.transform.position) * 1.5f));
+            gameObject.transform.GetChild(0).LookAt(targetZombie.transform);
         }
-
         else
         {
             print("Looking for zombies");
         }
-        if(hand.transform.GetChild(0).gameObject.GetComponent<GunScript>().magAmmo == 0 && reloading == false)
+        if(gun.GetComponent<RobotGun>().magAmmo == 0 && reloading == false)
         {
             reloading = true;
-            currentState = MinionManager.states.reloading;
             MoveToPoint(-targetZombie.transform.forward * 10);
             Invoke("Reload", 2.5f);
         }
 
     }
+    void Defend()
+    {
+        GameObject[] allZombies = GameObject.FindGameObjectsWithTag("Zombie");
+        float closestDistance = 5000;
+        foreach (GameObject zombie in allZombies)
+        {
+            if (Vector3.Distance(gameObject.transform.position, zombie.transform.position) <= closestDistance)
+            {
+                targetZombie = zombie;
+                closestDistance = Vector3.Distance(gameObject.transform.position, zombie.transform.position);
+            }
+        }
+        if (targetZombie != null && Vector3.Distance(gameObject.transform.position, targetZombie.transform.position) <= 20)
+        {
+            gameObject.transform.GetChild(0).LookAt(targetZombie.transform);
+        }
+
+
+        if (gun.GetComponent<RobotGun>().magAmmo == 0 && reloading == false)
+        {
+            reloading = true;
+            Invoke("Reload", 2.5f);
+        }
+    }
 
     void Reload()
     {
-        hand.transform.GetChild(0).gameObject.GetComponent<GunScript>().Reload();
+        gun.GetComponent<RobotGun>().Reload();
         reloading = false;
-        currentState = MinionManager.states.attacking;
     }
 
 

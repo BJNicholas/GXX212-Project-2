@@ -5,29 +5,39 @@ using UnityEngine.AI;
 
 public class ZombieScript : MonoBehaviour
 {
-    public float health;
+    public float damage;
 
 
     private void FixedUpdate()
     {
 
-        if(health <= 0)
-        {
-            Die();
-        }
-        //While alive
-        else
-        {
-            GetComponent<NavMeshAgent>().SetDestination(PlayerMovement.instance.gameObject.transform.position); // this will change!!!!!
-        }
+        Attack();
 
     }
 
-    public void Die()
+    void Attack()
     {
-        GetComponent<NavMeshAgent>().enabled = false;
-        //GetComponentInChildren<Rigidbody>().detectCollisions = false;
-        GetComponent<ZombieScript>().enabled = false;
-        Destroy(gameObject);
+        GameObject targetCharacter = null;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Friendly");
+        float closestDistance = Mathf.Infinity;
+        foreach (GameObject character in enemies)
+        {
+            if (Vector3.Distance(gameObject.transform.position, character.transform.position) <= closestDistance)
+            {
+                targetCharacter = character;
+                closestDistance = Vector3.Distance(gameObject.transform.position, character.transform.position);
+            }
+        }
+
+        if (targetCharacter != null) GetComponent<NavMeshAgent>().SetDestination(targetCharacter.transform.position);
+        else print("Looking for brains");
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Friendly" || collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Character>().health -= damage;
+        }
     }
 }

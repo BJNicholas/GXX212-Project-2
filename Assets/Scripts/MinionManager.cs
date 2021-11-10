@@ -10,6 +10,7 @@ public class MinionManager : MonoBehaviour
         idle,
         movingToPoint,
         attacking,
+        defending,
         reloading,
         collectingResources//maybe?
     }

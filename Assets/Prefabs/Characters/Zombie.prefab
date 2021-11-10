@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8383005311808859529}
   - component: {fileID: 3313490615145386804}
   - component: {fileID: 7895652021813456304}
-  - component: {fileID: 4346374909284369726}
   m_Layer: 0
   m_Name: Face
   m_TagString: Zombie
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4346374909284369726
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4948662069668734143}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7193337048883827586
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +92,8 @@ GameObject:
   - component: {fileID: 238667808324569831}
   - component: {fileID: 7159608052682850044}
   - component: {fileID: -3905174980373991336}
+  - component: {fileID: 6827834272455186341}
+  - component: {fileID: 3447844227518450341}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -162,7 +150,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe01e96c042423468b54da57285e7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+--- !u!114 &6827834272455186341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193337048883827586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f7fc4395e3eda41a141a6ad60e3f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 100
+--- !u!136 &3447844227518450341
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193337048883827586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8633125919541247140
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,10 +189,9 @@ GameObject:
   - component: {fileID: 458007618763195596}
   - component: {fileID: 2575824084314992276}
   - component: {fileID: 2496557219715127020}
-  - component: {fileID: 4087444458434499993}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Zombie
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,17 +260,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4087444458434499993
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8633125919541247140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

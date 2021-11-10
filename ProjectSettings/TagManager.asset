@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zombie
+  - Friendly
   layers:
   - Default
   - TransparentFX
