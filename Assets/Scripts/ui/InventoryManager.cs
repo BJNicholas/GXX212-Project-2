@@ -6,9 +6,11 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
     public GameObject[] slots;
+    public GameObject selectedSlot = null;
 
     private void Start()
     {
+        selectedSlot = null;
         instance = this;
     }
 

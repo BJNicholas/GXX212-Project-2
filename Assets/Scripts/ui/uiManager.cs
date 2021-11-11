@@ -35,7 +35,7 @@ public class uiManager : MonoBehaviour
         else
         {
             playerHand.SetActive(false);
-            toolBar.SetActive(false);
+            toolBar.GetComponent<Toolbar>().enabled = false;
             menu.SetActive(true);
             Camera.main.GetComponent<MouseLook>().enabled = false;
             Cursor.lockState = CursorLockMode.Confined;
@@ -45,7 +45,8 @@ public class uiManager : MonoBehaviour
     public void CloseMenu(GameObject menu)
     {
         playerHand.SetActive(true);
-        toolBar.SetActive(true);
+        toolBar.GetComponent<Toolbar>().enabled = true;
+        GetComponent<InventoryManager>().selectedSlot = null;
         print("CLOSE");
         Camera.main.GetComponent<MouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

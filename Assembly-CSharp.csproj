@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\ui\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Robot.cs" />
     <Compile Include="Assets\Scripts\ZombieS\ZombieSpawner.cs" />
+    <Compile Include="Assets\Scripts\RobotGun.cs" />
     <Compile Include="Assets\Scripts\ui\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Player scripts\MouseLook.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Assets\Scripts\ui\Toolbar.cs" />
     <Compile Include="Assets\Scripts\Recoil.cs" />
     <Compile Include="Assets\Scripts\BuildingScript.cs" />
-    <Compile Include="Assets\Scripts\RobotGun.cs" />
+    <Compile Include="Assets\Scripts\Tool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />

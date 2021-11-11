@@ -16,6 +16,11 @@ public class InventorySlot : MonoBehaviour
     public int storedAmount;
     public int maxAmount = 100;
 
+    private void Start()
+    {
+        Button button = GetComponent<Button>();
+        button.onClick.AddListener(delegate { Clicked(); });
+    }
 
     private void Update()
     {
@@ -63,8 +68,46 @@ public class InventorySlot : MonoBehaviour
     }
 
 
-    private void OnMouseOver()
+    public void Clicked()
     {
-        //add drag maybe idk man tbh
+        if(InventoryManager.instance.selectedSlot != null)
+        {
+            GameObject selSlot = InventoryManager.instance.selectedSlot;
+            if (selSlot.GetComponent<InventorySlot>().empty)
+            {
+                InventoryManager.instance.selectedSlot = gameObject;
+            }
+            else
+            {
+                if(selSlot.GetComponent<InventorySlot>().storedItem == storedItem && selSlot != gameObject) //therefore this slot is not empty
+                {
+                    storedAmount += selSlot.GetComponent<InventorySlot>().storedAmount;
+                    selSlot.GetComponent<InventorySlot>().storedAmount = 0;
+                    CheckOverflow();
+                    InventoryManager.instance.selectedSlot = gameObject;
+                }
+                else
+                {
+                    if (empty)
+                    {
+                        storedItem = selSlot.GetComponent<InventorySlot>().storedItem;
+                        storedAmount += selSlot.GetComponent<InventorySlot>().storedAmount;
+
+                        selSlot.GetComponent<InventorySlot>().storedItem = null;
+                        selSlot.GetComponent<InventorySlot>().storedAmount = 0;
+                        InventoryManager.instance.selectedSlot = gameObject;
+                    }
+                    else
+                    {
+                        print("Cant put that there");
+                        InventoryManager.instance.selectedSlot = gameObject;
+                    }
+                }
+            }
+        }
+        else
+        {
+            InventoryManager.instance.selectedSlot = gameObject;
+        }
     }
 }
