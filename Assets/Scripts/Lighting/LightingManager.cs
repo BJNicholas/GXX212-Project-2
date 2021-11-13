@@ -8,6 +8,7 @@ public class LightingManager : MonoBehaviour
     public LightingPreset preset;
     public float daySpeed;
     public int daycount;
+    public GameObject dome;
     [Range(0, 24)] public float timeOfDay;
 
     bool newDay;
@@ -27,8 +28,11 @@ public class LightingManager : MonoBehaviour
                 GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
                 foreach (GameObject spawner in spawners) spawner.GetComponent<ZombieSpawner>().maxPerDay = 20 * daycount;
                 newDay = true;
+                dome.SetActive(true);
             }
             else if (timeOfDay > 6) newDay = false;
+
+            if (timeOfDay > 18) dome.SetActive(false);
         }
         else
         {
