@@ -33,11 +33,11 @@ public class ZombieScript : MonoBehaviour
         else print("Looking for brains");
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.tag == "Friendly" || collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Friendly" || other.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Character>().health -= damage;
+            other.gameObject.GetComponent<Character>().health -= damage;
         }
     }
 }

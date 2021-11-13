@@ -2770,6 +2770,7 @@ GameObject:
   - component: {fileID: 2284807343568050177}
   - component: {fileID: 4058221987884117195}
   - component: {fileID: 1771861383}
+  - component: {fileID: 2036480684342628767}
   m_Layer: 0
   m_Name: Dome
   m_TagString: Untagged
@@ -2897,6 +2898,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scroll: {x: 0, y: 0.1}
+--- !u!64 &2036480684342628767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544902219026435358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5750084716789328873, guid: ed4909883cc15ef44a5a43f62ba823b3, type: 3}
 --- !u!1 &2580984702163083947
 GameObject:
   m_ObjectHideFlags: 0
