@@ -9,6 +9,7 @@ public class uiManager : MonoBehaviour
     public GameObject playerHand;
     public GameObject toolBar;
     public GameObject inventoryMenu;
+    public GameObject pauseMenu;
 
     private void Start()
     {
@@ -16,13 +17,30 @@ public class uiManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         inventoryMenu.SetActive(false); //Do this for all menus on start
+        pauseMenu.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) OpenMenu(inventoryMenu);
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenMenu(inventoryMenu);
+            if (pauseMenu.active)
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1;
+                Camera.main.GetComponent<MouseLook>().enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0;
+                Camera.main.GetComponent<MouseLook>().enabled = false;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+            }
         }
     }
 
@@ -47,7 +65,6 @@ public class uiManager : MonoBehaviour
         playerHand.SetActive(true);
         toolBar.GetComponent<Toolbar>().enabled = true;
         GetComponent<InventoryManager>().selectedSlot = null;
-        print("CLOSE");
         Camera.main.GetComponent<MouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
