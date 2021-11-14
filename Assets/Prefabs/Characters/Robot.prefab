@@ -234,7 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db94be6ddb09b0409708ab9809c14e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 2
+  currentState: 4
+  player: {fileID: 2267887933512116667, guid: c503a9d4cec6b1e40876c8cb7b2ec260, type: 3}
   gun: {fileID: 627633773304412854}
 --- !u!114 &-1859993683621254235
 MonoBehaviour:
