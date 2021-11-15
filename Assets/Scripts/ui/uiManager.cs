@@ -10,6 +10,7 @@ public class uiManager : MonoBehaviour
     public GameObject toolBar;
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
+    public GameObject ordersMenu;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class uiManager : MonoBehaviour
         Cursor.visible = false;
         inventoryMenu.SetActive(false); //Do this for all menus on start
         pauseMenu.SetActive(false);
+        ordersMenu.SetActive(false);
     }
 
     private void Update()
@@ -40,6 +42,17 @@ public class uiManager : MonoBehaviour
                 Camera.main.GetComponent<MouseLook>().enabled = false;
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (ordersMenu.active)
+            {
+                ordersMenu.SetActive(false);
+            }
+            else
+            {
+                ordersMenu.SetActive(true);
             }
         }
     }
