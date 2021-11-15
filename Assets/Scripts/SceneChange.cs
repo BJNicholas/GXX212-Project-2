@@ -5,11 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    //UI for confirmation message
+    public GameObject confirmationPanel;
+
     //PlayButton is pressed
     public void PlayGame()
     {
-        Debug.Log("Playing Game...");
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        //Debug.Log("Playing Game...");
+        confirmationPanel.SetActive(true);
+        //SceneManager.LoadScene(sceneName: "Main");
+    }
+
+    //Yes button is pressed
+    public void YesConfirm()
+    {
+        SceneManager.LoadScene(sceneName: "Test");
+    }
+
+    //No button is pressed
+    public void NoConfirm()
+    {
+        confirmationPanel.SetActive(false);
     }
 
     /*public void StartTutorial()
