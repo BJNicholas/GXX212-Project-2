@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float health = 100;
+    public GameObject dieScreen;
 
     private void Update()
     {

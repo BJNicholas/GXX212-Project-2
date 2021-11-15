@@ -24,9 +24,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
-    public void ReturnToGame()
+    public void PlayAgain()
     {
         Time.timeScale = 1;
-        uiManager.instance.CloseMenu(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

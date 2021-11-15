@@ -28,18 +28,6 @@ public class SceneChange : MonoBehaviour
         confirmationPanel.SetActive(false);
     }
 
-    /*public void StartTutorial()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("Start Tutorial...");
-    }
-    
-    public void SkipTutorial()
-    {
-        SceneManager.LoadScene(sceneName: "GameScene");
-        Debug.Log("Skip Tutorial...");
-    }
-    */
 
     public void Quit()
     {
