@@ -11,6 +11,7 @@ public class uiManager : MonoBehaviour
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
     public GameObject ordersMenu;
+    public GameObject deathScreen;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class uiManager : MonoBehaviour
         inventoryMenu.SetActive(false); //Do this for all menus on start
         pauseMenu.SetActive(false);
         ordersMenu.SetActive(false);
+        deathScreen.SetActive(false);
     }
 
     private void Update()

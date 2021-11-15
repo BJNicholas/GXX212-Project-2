@@ -10,7 +10,16 @@ public class Character : MonoBehaviour
     {
         if (health <= 0)
         {
-            Die();
+            if(gameObject.name == "Player Body")
+            {
+                uiManager.instance.deathScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Die();
+            }
         }
     }
     public void Die()
