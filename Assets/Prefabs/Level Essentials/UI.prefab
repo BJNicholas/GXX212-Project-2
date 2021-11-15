@@ -12278,7 +12278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7deccd1cb410ae54c9957f2d8bd469b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfDayPanel: {fileID: 6943667654760398511}
+  timeOfDayPanel: {fileID: 4631955039731519342}
   messageText: {fileID: 7048219878088649866}
   lightingMngr: {fileID: 0}
   active: 1
@@ -21476,7 +21476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3479348794849619956
 RectTransform:
   m_ObjectHideFlags: 0
