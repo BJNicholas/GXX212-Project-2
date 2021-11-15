@@ -11,7 +11,7 @@ public class MinionManager : MonoBehaviour
         movingToPoint,
         attacking,
         defending,
-        following,
+        reloading,
         collectingResources//maybe?
     }
     public List<GameObject> minionsInScene;
