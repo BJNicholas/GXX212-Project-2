@@ -10,6 +10,7 @@ public class uiManager : MonoBehaviour
     public GameObject toolBar;
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
+    public GameObject dieScreen;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class uiManager : MonoBehaviour
         Cursor.visible = false;
         inventoryMenu.SetActive(false); //Do this for all menus on start
         pauseMenu.SetActive(false);
+        dieScreen.SetActive(false);
     }
 
     private void Update()

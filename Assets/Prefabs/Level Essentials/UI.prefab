@@ -12501,6 +12501,7 @@ MonoBehaviour:
   toolBar: {fileID: 1986399224145216434}
   inventoryMenu: {fileID: 1986399223255382342}
   pauseMenu: {fileID: 9155557898370748720}
+  dieScreen: {fileID: 4913921820278016}
 --- !u!114 &1986399223483174312
 MonoBehaviour:
   m_ObjectHideFlags: 0

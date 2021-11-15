@@ -5,13 +5,22 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float health = 100;
-    public GameObject dieScreen;
 
     private void Update()
     {
         if (health <= 0)
         {
-            Die();
+            if(gameObject.name == "Player Body")
+            {
+                uiManager.instance.dieScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Die();
+            }
         }
     }
     public void Die()
