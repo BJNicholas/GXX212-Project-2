@@ -3447,6 +3447,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6299353265723864394, guid: 79e7933ece29d6b4798c0b34e88b1a4b, type: 3}
   m_PrefabInstance: {fileID: 1284533259}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1289549121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2268597277723046346, guid: 00260440d0e108444b363a82874ae8d7, type: 3}
+  m_PrefabInstance: {fileID: 2268597277387942418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfe436f78285994db76395ace20f2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1302640111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,6 +5555,10 @@ PrefabInstance:
       propertyPath: toolSlot
       value: 
       objectReference: {fileID: 1416423997}
+    - target: {fileID: 5442427968757535098, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
+      propertyPath: lightingMngr
+      value: 
+      objectReference: {fileID: 1289549121}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
 --- !u!1001 &2267887933875767962
