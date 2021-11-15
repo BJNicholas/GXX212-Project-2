@@ -9,7 +9,7 @@ public class SceneChange : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Playing Game...");
-        //SceneManager.LoadScene(sceneName: "Main");
+        SceneManager.LoadScene(sceneBuildIndex: 1);
     }
 
     /*public void StartTutorial()

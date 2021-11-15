@@ -60,12 +60,14 @@
     <Compile Include="Assets\Scripts\Robot.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\Zombies\ZombieSpawner.cs" />
+    <Compile Include="Assets\Scripts\ui\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\Guns\RobotGun.cs" />
     <Compile Include="Assets\Scripts\ui\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Items\Tool.cs" />
     <Compile Include="Assets\Scripts\Player scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\ui\CraftingItem.cs" />
+    <Compile Include="Assets\Scripts\ui\OrdersMenu.cs" />
     <Compile Include="Assets\Scripts\Zombies\ZombieScript.cs" />
     <Compile Include="Assets\Scripts\Items\Structure.cs" />
     <Compile Include="Assets\Scripts\Items\Resource.cs" />
@@ -76,10 +78,9 @@
     <Compile Include="Assets\Scripts\Factory.cs" />
     <Compile Include="Assets\Scripts\ui\Toolbar.cs" />
     <Compile Include="Assets\Scripts\Guns\Recoil.cs" />
+    <Compile Include="Assets\Scripts\ui\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ScrollTexture.cs" />
     <Compile Include="Assets\Scripts\BuildingScript.cs" />
-    <Compile Include="Assets\Scripts\ui\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\ui\SettingsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
