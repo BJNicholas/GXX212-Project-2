@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Items\Tool.cs" />
     <Compile Include="Assets\Scripts\Player scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\ui\TimeOfDayMessage.cs" />
     <Compile Include="Assets\Scripts\ui\CraftingItem.cs" />
     <Compile Include="Assets\Scripts\ui\OrdersMenu.cs" />
     <Compile Include="Assets\Scripts\Zombies\ZombieScript.cs" />

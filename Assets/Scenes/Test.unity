@@ -5392,6 +5392,14 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 1140852871}
+    - target: {fileID: 1727440248492090057, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 136.391
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727440248492090057, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.979
+      objectReference: {fileID: 0}
     - target: {fileID: 1986399223483174313, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
       propertyPath: playerHand
       value: 
@@ -5492,6 +5500,10 @@ PrefabInstance:
       propertyPath: lightingMngr
       value: 
       objectReference: {fileID: 1289549121}
+    - target: {fileID: 5709494855270028877, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c24f0191c19b65b4bbb3528e8af62426, type: 3}
 --- !u!1001 &2267887933875767962

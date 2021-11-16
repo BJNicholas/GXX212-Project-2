@@ -11,6 +11,11 @@ public class LightingManager : MonoBehaviour
     public GameObject dome;
     [Range(0, 24)] public float timeOfDay;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     bool newDay;
     private void Update()
     {
