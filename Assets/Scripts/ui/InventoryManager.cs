@@ -7,11 +7,37 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     public GameObject[] slots;
     public GameObject selectedSlot = null;
+    public List<GameObject> tempStoredItems = null;
 
     private void Start()
     {
         selectedSlot = null;
         instance = this;
+    }
+
+    public void StoreItem(GameObject item, int amount)
+    {
+        while(amount != 0)
+        {
+            tempStoredItems.Add(item);
+            amount -= 1;
+        }
+    }
+
+    private void Update()
+    {
+        if (slots[0].active)
+        {
+            if(tempStoredItems.ToArray().Length > 0)
+            {
+                foreach (GameObject item in tempStoredItems)
+                {
+                    AddItem(item, 1);
+                    tempStoredItems.Remove(item);
+                    tempStoredItems.TrimExcess();
+                }
+            }
+        }
     }
 
 
