@@ -17,6 +17,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider effects;
     //toggles
     public MotionBlur motionBlur = null;
+    public AmbientOcclusion ambientOcc = null;
     //dropdowns
     public Dropdown aa;
 
@@ -26,6 +27,7 @@ public class SettingsMenu : MonoBehaviour
         fov.value = Camera.main.fieldOfView;
 
         volume.profile.TryGetSettings<MotionBlur>(out motionBlur);
+        volume.profile.TryGetSettings<AmbientOcclusion>(out ambientOcc);
     }
 
     private void Update()
@@ -49,6 +51,12 @@ public class SettingsMenu : MonoBehaviour
 
         if (motionBlur.active == true) motionBlur.active = false;
         else motionBlur.active = true;
+    }
+    public void AmbientOcclusionToggle(Toggle tglValue)
+    {
+
+        if (ambientOcc.active == true) ambientOcc.active = false;
+        else ambientOcc.active = true;
     }
 
 

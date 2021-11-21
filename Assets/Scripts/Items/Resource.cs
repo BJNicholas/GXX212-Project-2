@@ -10,22 +10,14 @@ public class Resource : MonoBehaviour
     public int amount;
     public float health = 100;
 
-    private void Update()
-    {
-        if (health <= 0)
-        {
-            Death();
-        }
-    }
-
     private void OnMouseOver()
     {
         if (Input.GetKeyDown(KeyCode.F) && requiredTool == null)
         {
             health -= 100;
             print("Collect " + collectableItem.ToString() + " X" + amount);
-            InventoryManager.instance.AddItem(collectableItem, amount);
-
+            InventoryManager.instance.StoreItem(collectableItem, amount);
+            Death();
         }
     }
     void Death()
@@ -42,7 +34,11 @@ public class Resource : MonoBehaviour
                 GetComponent<AudioSource>().clip = collectionSound;
                 GetComponent<AudioSource>().Play();
                 health -= 5;
-                InventoryManager.instance.AddItem(collectableItem, amount);
+                InventoryManager.instance.StoreItem(collectableItem, amount);
+                if(health <= 0)
+                {
+                    Death();
+                }
             }
         }
     }
