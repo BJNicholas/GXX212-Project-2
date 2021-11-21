@@ -14,7 +14,7 @@ public class Factory : MonoBehaviour
 
     public void SpawnRobot()
     {
-        GameObject robot = Instantiate(robotPrefab);
-        robot.transform.position = gameObject.transform.localPosition;
+        GameObject robot = Instantiate(robotPrefab, transform);
+        robot.transform.position = gameObject.transform.position;
     }
 }

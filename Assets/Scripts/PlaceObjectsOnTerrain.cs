@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaceObjectsOnTerrain : MonoBehaviour
 {
-    public GameObject tree;
+    public GameObject[] objectPrefabs; // array must be ordered in the same way as the Tree prototypes in terrain script
     public GameObject Player;
     public float renderDistance = 5;
     TreeInstance[] originalTrees;
@@ -19,9 +19,15 @@ public class PlaceObjectsOnTerrain : MonoBehaviour
 
     private void Update()
     {
+        SpawnTreeObjects();
+    }
+
+    void SpawnTreeObjects()
+    {
         TerrainData mapData = gameObject.GetComponent<Terrain>().terrainData;
         foreach (TreeInstance treeIn in newTrees)
         {
+            int objectIndex = treeIn.prototypeIndex;
             Vector3 worldPos = Vector3.Scale(treeIn.position, mapData.size) + Terrain.activeTerrain.transform.position;
             if (Vector3.Distance(worldPos, Player.transform.position) <= renderDistance)
             {
@@ -31,7 +37,7 @@ public class PlaceObjectsOnTerrain : MonoBehaviour
                 }
                 else
                 {
-                    GameObject newTree = Instantiate(tree, worldPos, Quaternion.identity);
+                    GameObject newTree = Instantiate(objectPrefabs[objectIndex], worldPos, Quaternion.identity);
                     newTree.name = (Vector3.Scale(treeIn.position, mapData.size) + Terrain.activeTerrain.transform.position).ToString();
                     newTree.transform.SetParent(gameObject.transform);
                     newTrees.Remove(treeIn);

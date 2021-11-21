@@ -48,7 +48,7 @@ public class LightingManager : MonoBehaviour
     void UpdateLighting(float timePercent)
     {
         RenderSettings.ambientLight = preset.ambientColour.Evaluate(timePercent);
-        RenderSettings.fogColor = preset.fogColour.Evaluate(timePercent);
+        //RenderSettings.fogColor = preset.fogColour.Evaluate(timePercent); - didnt like the way this looked, much better with just white fog
         
         if(directionalLight != null)
         {

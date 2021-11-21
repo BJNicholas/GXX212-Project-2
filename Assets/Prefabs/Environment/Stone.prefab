@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 747906167389108402}
   - component: {fileID: -5969294993604619663}
   - component: {fileID: 7442626713119682192}
-  - component: {fileID: 1911135413705571407}
   m_Layer: 3
   m_Name: Stone
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4923212531500433486}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.5491364, y: -0.11458114, z: -8.56134}
-  m_LocalScale: {x: 5.5226765, y: 4.294335, z: 6.467399}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,7 +94,7 @@ MeshCollider:
   m_GameObject: {fileID: 4923212531500433486}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -223,23 +222,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.15, y: 0.15, z: 0.15}
+  m_Extents: {x: 0.35, y: 0.35, z: 0.35}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0.002}
   m_TimeToStationary: 0.5
---- !u!136 &1911135413705571407
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923212531500433486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.2
-  m_Direction: 0
-  m_Center: {x: 0, y: -0.0004598722, z: 0.0018141046}

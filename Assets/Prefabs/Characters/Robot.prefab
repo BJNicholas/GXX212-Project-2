@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 4
-  player: {fileID: 2267887933512116667, guid: c503a9d4cec6b1e40876c8cb7b2ec260, type: 3}
   gun: {fileID: 627633773304412854}
 --- !u!114 &-1859993683621254235
 MonoBehaviour:
@@ -318,6 +317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1048984481642071174}
     m_Modifications:
+    - target: {fileID: 4746684630695208548, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
+      propertyPath: aiObject
+      value: 
+      objectReference: {fileID: 8816841628168262077}
     - target: {fileID: 7223631753481747314, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: m_Name
       value: RobotGun
