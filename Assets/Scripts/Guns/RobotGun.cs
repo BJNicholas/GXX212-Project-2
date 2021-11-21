@@ -21,8 +21,8 @@ public class RobotGun : MonoBehaviour
     float coolDown;
     private void Start()
     {
-        aiObject = gameObject.transform.root.gameObject;
-        aiObject.GetComponent<Robot>().gun = gameObject;
+        //aiObject = gameObject.transform.root.gameObject;
+        //aiObject.GetComponent<Robot>().gun = gameObject;
         coolDown = fireRate;
         anim = GetComponent<Animator>();
     }

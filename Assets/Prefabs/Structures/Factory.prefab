@@ -30,6 +30,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: -1.85, y: -1.85, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &7620018332068145238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900378822109738438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d482bf007a0e943a1444b752be3472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotPrefab: {fileID: 8816841628168262077, guid: 6a2c5f6f9ea7aca4ebbb90ef7f7d2cd9, type: 3}
 --- !u!1 &8806441771329365735
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,7 +53,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6757807897663677028}
   - component: {fileID: 4596787376365716763}
-  - component: {fileID: -8168355160335253356}
   - component: {fileID: 4466929084560711352}
   m_Layer: 0
   m_Name: Factory
@@ -78,19 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 95fbbb4c160e35e4a87bf9eec981bf27, type: 3}
   type: 1
---- !u!114 &-8168355160335253356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8806441771329365735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d482bf007a0e943a1444b752be3472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotPrefab: {fileID: 8816841628168262077, guid: 6a2c5f6f9ea7aca4ebbb90ef7f7d2cd9, type: 3}
 --- !u!208 &4466929084560711352
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -165,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5881781c365fe9489fda7a1b34992a3, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 919132149155446097, guid: c5881781c365fe9489fda7a1b34992a3, type: 3}
       propertyPath: m_Name
       value: RobotFactory
