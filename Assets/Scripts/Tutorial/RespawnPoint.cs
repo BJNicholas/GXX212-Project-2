@@ -5,14 +5,15 @@ using UnityEngine;
 public class RespawnPoint : MonoBehaviour
 {
     public Transform respawnPoint;
+    public Transform Player;
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Friendly")
+        if(col.CompareTag("Friendly"))
         {
             print("Respawn");
-            transform.position = respawnPoint.position;
+            Player.transform.position = respawnPoint.position;
+            Physics.SyncTransforms();
         }
     }
-
 }
