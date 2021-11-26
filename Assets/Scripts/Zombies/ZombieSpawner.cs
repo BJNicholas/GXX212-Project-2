@@ -10,6 +10,8 @@ public class ZombieSpawner : MonoBehaviour
     float count = 0;
     GameObject manager;
 
+
+
     private void Start()
     {
         manager = GameObject.Find("GameManager");
