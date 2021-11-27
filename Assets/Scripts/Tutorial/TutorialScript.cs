@@ -12,6 +12,7 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(PlayTutorialIntro());
     }
 
@@ -34,7 +35,7 @@ public class TutorialScript : MonoBehaviour
     {
         logText.text = ("Welcome to the B.I.N training simulation room.");
         tutorialIntro.SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(MovementTutorialIntro());
     }
 
