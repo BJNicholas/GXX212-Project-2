@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d482bf007a0e943a1444b752be3472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotPrefab: {fileID: 8816841628168262077, guid: 6a2c5f6f9ea7aca4ebbb90ef7f7d2cd9, type: 3}
+  robotPrefab: {fileID: 2113525977032829594, guid: f84a15d5e05693d4bb6d2e71135f0b07, type: 3}
 --- !u!1 &8806441771329365735
 GameObject:
   m_ObjectHideFlags: 0

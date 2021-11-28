@@ -8,12 +8,14 @@ public class Robot : MonoBehaviour
     public MinionManager.states currentState;
     GameObject player;
     NavMeshAgent navAgent;
+    public Camera robotCam;
     public GameObject gun;
     [HideInInspector]GameObject targetZombie;
     bool reloading = false;
 
     private void Start()
     {
+        robotCam.depth = 0;
         navAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player Body");
     }
