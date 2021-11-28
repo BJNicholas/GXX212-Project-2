@@ -16,6 +16,17 @@ public class Tool : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().Play(toolName + "-Swing");
+            if(toolName == "Remote")
+            {
+                RobotManager.instance.NextRobot();
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (toolName == "Remote")
+            {
+                RobotManager.instance.BackToPlayer();
+            }
         }
     }
 
