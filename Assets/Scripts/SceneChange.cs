@@ -61,7 +61,7 @@ public class SceneChange : MonoBehaviour
     IEnumerator StartNarrative3()
     {
         narrativeText.text =
-            ("Although it seemed too good to be true, everyone left behind on earth have been infected by the toxic gases and now craves the flesh and blood of the humans " +
+            ("Unfortunately everyone left behind on earth have been infected by the toxic gases. Now they crave the flesh and blood of the humans " +
             "who left them to die all those years ago.");
         yield return new WaitForSeconds(12f);
         StartCoroutine(StartNarrative4());
@@ -70,7 +70,7 @@ public class SceneChange : MonoBehaviour
     IEnumerator StartNarrative4()
     {
         narrativeText.text =
-            ("It now falls under the job of the B.I.N. Agent to take out all the infected and finally bring all humans back home.");
+            ("It now falls under the job of the Bio-Infected Neutraliser (BIN) Agent to take out all the infected and finally bring all humans back home.");
         yield return new WaitForSeconds(10f);
         print("Changing Scene...");
         SceneManager.LoadScene(2);
