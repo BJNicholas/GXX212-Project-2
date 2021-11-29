@@ -16,6 +16,7 @@ public class Robot : MonoBehaviour
     private void Start()
     {
         robotCam.depth = 0;
+        robotCam.enabled = false;
         navAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player Body");
     }

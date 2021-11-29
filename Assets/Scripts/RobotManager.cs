@@ -52,22 +52,26 @@ public class RobotManager : MonoBehaviour
         {
             currentRobot = allRobots[0];
             currentRobot.GetComponent<Robot>().robotCam.depth = 1;
+            currentRobot.GetComponent<Robot>().robotCam.enabled = true;
         }
         else
         {
             GameObject oldRobot = currentRobot;
             oldRobot.GetComponent<Robot>().robotCam.depth = 0;
+            oldRobot.GetComponent<Robot>().robotCam.enabled = false;
             if(allRobots.IndexOf(currentRobot) == allRobots.ToArray().Length - 1)
             {
                 currentRobot = allRobots[0];
             }
             else currentRobot = allRobots[allRobots.IndexOf(currentRobot) + 1];
+            currentRobot.GetComponent<Robot>().robotCam.enabled = true;
             currentRobot.GetComponent<Robot>().robotCam.depth = 1;
         }
     }
     public void BackToPlayer()
     {
         currentRobot.GetComponent<Robot>().robotCam.depth = 0;
+        currentRobot.GetComponent<Robot>().robotCam.enabled = false;
         currentRobot = null;
         playerCam.depth = 1;
     }
