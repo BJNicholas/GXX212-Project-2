@@ -43,7 +43,7 @@ public class TimeOfDayMessage : MonoBehaviour
 
         hour = Mathf.FloorToInt(lightingMngr.timeOfDay);
         clockText.text = string.Format("{0:00}:{1:00}", hour, 0);
-        dayText.text = ("Day\n" + lightingMngr.daycount);
+        dayText.text = ("Day " + lightingMngr.daycount);
         
     }
 
