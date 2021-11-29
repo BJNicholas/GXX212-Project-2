@@ -59884,8 +59884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0041594505, y: 0}
-  m_SizeDelta: {x: 1839.5087, y: 209.9474}
+  m_AnchoredPosition: {x: 0.0041594505, y: -0.000012398}
+  m_SizeDelta: {x: 1839.5087, y: 304.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648177278
 MonoBehaviour:
@@ -59909,10 +59909,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2d499a4d1306e2044bf1ebaf46349208, type: 3}
-    m_FontSize: 60
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 5
     m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -80746,8 +80746,8 @@ MonoBehaviour:
   full: 0
   icon: {fileID: 1986399223107022343}
   amountTXT: {fileID: 1986399223664545175}
-  storedItem: {fileID: 0}
-  storedAmount: 0
+  storedItem: {fileID: 7903006023301243519, guid: 23bdddbf441498744af4a0a6aaab9682, type: 3}
+  storedAmount: 1
   maxAmount: 1
 --- !u!224 &1986399222463820833
 RectTransform:
