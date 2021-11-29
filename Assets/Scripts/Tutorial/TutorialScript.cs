@@ -56,7 +56,7 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator PlayRobotTutorial()
     {
-        logText.text = ("P - Spawn Robot \n TAB - Open Robot Orders \n NOTE: Need to build FACTORY to spawn Robots.");
+        logText.text = ("P - Spawn Robot \n TAB - Open Robot Orders \n NOTE: FACTORY is required to spawn Robots.");
         tutorialIntro.SetActive(true);
         yield return new WaitForSeconds(8f);
         tutorialIntro.SetActive(false);
@@ -64,7 +64,7 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator PlayBuildingTutorial()
     {
-        logText.text = ("F - Pick Up Items \n E - Open Inventory/Crafting Menu");
+        logText.text = ("F - Pick Up Items \n E - Open Inventory/Crafting Menu \n Scroll Wheel - Change Equipped/Rotate Building");
         tutorialIntro.SetActive(true);
         yield return new WaitForSeconds(8f);
         tutorialIntro.SetActive(false);

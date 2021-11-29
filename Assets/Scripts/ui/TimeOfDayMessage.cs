@@ -10,16 +10,22 @@ public class TimeOfDayMessage : MonoBehaviour
     public Text messageText;
     public LightingManager lightingMngr;
 
+    public Text clockText;
+    public Text dayText;
+
     public bool active = true;
     public bool nightTime = false;
 
     public int currentDayCount;
+
+    public float hour;
     
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(MessagePopup());
         currentDayCount = lightingMngr.daycount;
+                
     }
 
     // Update is called once per frame
@@ -34,6 +40,11 @@ public class TimeOfDayMessage : MonoBehaviour
         {
             StartCoroutine(NightTimePopup());
         }
+
+        hour = Mathf.FloorToInt(lightingMngr.timeOfDay);
+        clockText.text = string.Format("{0:00}:{1:00}", hour, 0);
+        dayText.text = ("Day " + lightingMngr.daycount);
+        
     }
 
     void PlayMessage()
