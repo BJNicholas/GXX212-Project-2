@@ -29,6 +29,7 @@ public class SceneChange : MonoBehaviour
     {
         StopAllCoroutines();
         print("Change to Tutorial Scene...");
+        SceneManager.LoadScene(2);
     }
 
     //IEnumerator LoadNarrative()
@@ -72,6 +73,6 @@ public class SceneChange : MonoBehaviour
             ("It now falls under the job of the B.I.N. Agent to take out all the infected and finally bring all humans back home.");
         yield return new WaitForSeconds(10f);
         print("Changing Scene...");
-        //SceneManager.LoadScene(sceneName: "Tutorial");
+        SceneManager.LoadScene(2);
     }
 }
