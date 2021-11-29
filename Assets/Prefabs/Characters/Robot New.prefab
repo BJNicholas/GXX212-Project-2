@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7959318200334096984}
   - component: {fileID: 1703832826070418971}
   - component: {fileID: 8951289803340105828}
-  - component: {fileID: 3404875700516856574}
+  - component: {fileID: 4365563322152336467}
   m_Layer: 0
   m_Name: Robot New
   m_TagString: Friendly
@@ -253,7 +253,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2113525977032829594}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!135 &3404875700516856574
-SphereCollider:
+--- !u!136 &4365563322152336467
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,9 +304,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.38
-  m_Center: {x: 0, y: 1.6, z: 0}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &2457875166131217398
 GameObject:
   m_ObjectHideFlags: 0

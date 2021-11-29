@@ -30,7 +30,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: -1.85, y: -1.85, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &7620018332068145238
+--- !u!114 &6523010223161849681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,10 +39,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3900378822109738438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d482bf007a0e943a1444b752be3472, type: 3}
+  m_Script: {fileID: 11500000, guid: 75536ec42ad979d469ae960b877457b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotPrefab: {fileID: 2113525977032829594, guid: f84a15d5e05693d4bb6d2e71135f0b07, type: 3}
+  zombiePrefab: {fileID: 2113525977032829594, guid: f84a15d5e05693d4bb6d2e71135f0b07, type: 3}
+  coolDown: 500
+  maxPerDay: 2
 --- !u!1 &8806441771329365735
 GameObject:
   m_ObjectHideFlags: 0
