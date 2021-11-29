@@ -26,7 +26,7 @@ public class InGameTutorial : MonoBehaviour
     {
         confirmButton.SetActive(false);
         narrativeText.text =
-            ("Welcome to Earth! We you the best of luck on your mission to kill all the infected. Be sure to stay alive and pay attention to the clock.");
+            ("Welcome to Earth! We wish you the best of luck on your mission to kill all the infected. Be sure to stay alive and pay attention to the clock.");
         yield return new WaitForSeconds(8f);
         StartCoroutine(EndInGameHelp());
     }
