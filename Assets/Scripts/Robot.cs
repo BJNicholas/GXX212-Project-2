@@ -11,6 +11,8 @@ public class Robot : MonoBehaviour
     public Camera robotCam;
     public GameObject gun;
     [HideInInspector]GameObject targetZombie;
+    [HideInInspector]GameObject targetResource;
+
     bool reloading = false;
 
     private void Start()
@@ -64,6 +66,10 @@ public class Robot : MonoBehaviour
         {
             FollowPlayer();
         }
+        else if (currentState == MinionManager.states.collectingResources)
+        {
+            CollectResources();
+        }
     }
 
     void Idle()
@@ -108,7 +114,7 @@ public class Robot : MonoBehaviour
                 navAgent.Resume();
                 navAgent.SetDestination(targetZombie.transform.position);
             }
-            gameObject.transform.GetChild(0).LookAt(targetZombie.transform);
+            gameObject.transform.LookAt(targetZombie.transform);
         }
         else
         {
@@ -174,8 +180,8 @@ public class Robot : MonoBehaviour
                 closestDistance = Vector3.Distance(gameObject.transform.position, zombie.transform.position);
             }
         }
-        if (targetZombie != null) gameObject.transform.GetChild(0).LookAt(targetZombie.transform);
-        else gameObject.transform.GetChild(0).LookAt(player.transform);
+        if (targetZombie != null) gameObject.transform.LookAt(targetZombie.transform);
+        else gameObject.transform.LookAt(player.transform);
 
         if (gun.GetComponent<RobotGun>().magAmmo == 0 && reloading == false)
         {
@@ -183,6 +189,53 @@ public class Robot : MonoBehaviour
             MoveToPoint(-targetZombie.transform.forward * 10);
             Invoke("Reload", 2.5f);
         }
+    }
+    void CollectResources()
+    {
+        GameObject[] resources = GameObject.FindGameObjectsWithTag("Resource");
+        float closestDistance = Mathf.Infinity;
+        foreach (GameObject resource in resources)
+        {
+            if (Vector3.Distance(gameObject.transform.position, resource.transform.position) <= closestDistance)
+            {
+                targetResource = resource;
+                closestDistance = Vector3.Distance(gameObject.transform.position, resource.transform.position);
+            }
+        }
+        if (targetResource == null)
+        {
+            print("Looking for Resources");
+            navAgent.SetDestination(transform.position + new Vector3(Random.Range(1, 10), 0, Random.Range(1, 10)));
+            PlaceObjectsOnTerrain.instance.SpawnTreeObjects(gameObject);
+        }
+
+        if(targetResource != null)
+        {
+            navAgent.SetDestination(targetResource.transform.position);
+            gameObject.transform.LookAt(targetResource.transform);
+            if(Vector3.Distance(targetResource.transform.position, gameObject.transform.position) < 3)
+            {
+                TakeResource(50);
+            }
+        }
+    }
+    float count = 0;
+    void TakeResource(float delay)
+    {
+        count -= 1;
+        if(count <= 0)
+        {
+            targetResource.GetComponent<AudioSource>().clip = targetResource.GetComponent<Resource>().collectionSound;
+            targetResource.GetComponent<AudioSource>().Play();
+            targetResource.GetComponent<Resource>().health -= 5;
+            InventoryManager.instance.StoreItem(targetResource.GetComponent<Resource>().collectableItem, targetResource.GetComponent<Resource>().amount);
+            if (targetResource.GetComponent<Resource>().health <= 0)
+            {
+                targetResource.GetComponent<Resource>().Death();
+            }
+            count = delay;
+        }
+
     }
 
     void Reload()

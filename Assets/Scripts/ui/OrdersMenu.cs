@@ -34,7 +34,8 @@ public class OrdersMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) Follow();
         else if (Input.GetKeyDown(KeyCode.Alpha2)) Attack();
         else if (Input.GetKeyDown(KeyCode.Alpha3)) Defend();
-        else if (Input.GetKeyDown(KeyCode.Alpha4)) CancelOrderChange();
+        else if (Input.GetKeyDown(KeyCode.Alpha4)) Collect();
+        else if (Input.GetKeyDown(KeyCode.Alpha5)) CancelOrderChange();
     }
 
 
@@ -59,6 +60,14 @@ public class OrdersMenu : MonoBehaviour
         foreach (GameObject robot in allRobots)
         {
             robot.GetComponent<Robot>().currentState = MinionManager.states.defending;
+        }
+        gameObject.SetActive(false);
+    }
+    void Collect()
+    {
+        foreach (GameObject robot in allRobots)
+        {
+            robot.GetComponent<Robot>().currentState = MinionManager.states.collectingResources;
         }
         gameObject.SetActive(false);
     }

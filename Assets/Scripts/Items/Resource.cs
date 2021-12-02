@@ -20,7 +20,7 @@ public class Resource : MonoBehaviour
             Death();
         }
     }
-    void Death()
+    public void Death()
     {
         Destroy(gameObject);
         //add more
@@ -39,6 +39,17 @@ public class Resource : MonoBehaviour
                 {
                     Death();
                 }
+            }
+        }
+        if (other.gameObject.GetComponent<Robot>())
+        {
+            GetComponent<AudioSource>().clip = collectionSound;
+            GetComponent<AudioSource>().Play();
+            health -= 5;
+            InventoryManager.instance.StoreItem(collectableItem, amount);
+            if (health <= 0)
+            {
+                Death();
             }
         }
     }

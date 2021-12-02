@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Structure : MonoBehaviour
 {
-    public float health = 1000;
+    public float health = 100;
 
 
     private void Update()
