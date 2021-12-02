@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 1703832826070418971}
   - component: {fileID: 8951289803340105828}
   - component: {fileID: 4365563322152336467}
+  - component: {fileID: 2127807620057734163}
   m_Layer: 0
   m_Name: Robot New
   m_TagString: Friendly
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f7fc4395e3eda41a141a6ad60e3f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
 --- !u!136 &4365563322152336467
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -308,6 +309,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &2127807620057734163
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113525977032829594}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1 &2457875166131217398
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +954,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7626706464674718748}
     m_Modifications:
+    - target: {fileID: 4746684630695208548, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7223631753481747314, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: m_Name
       value: RobotGun

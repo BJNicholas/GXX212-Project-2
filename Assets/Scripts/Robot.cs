@@ -99,7 +99,10 @@ public class Robot : MonoBehaviour
             Vector3 heading = targetZombie.transform.position - gameObject.transform.position;
             float distance = heading.magnitude;
             Vector3 direction = heading / distance;
-            if (heading.sqrMagnitude < 5 * 5) navAgent.Stop();
+            if (heading.sqrMagnitude < 5 * 5)
+            {
+                navAgent.Stop();
+            } 
             else
             {
                 navAgent.Resume();
