@@ -11,6 +11,11 @@ public class SceneChange : MonoBehaviour
     public GameObject narrativeUI;
     public Text narrativeText;
 
+    public AudioSource mainMenuVO1;
+    public AudioSource mainMenuVO2;
+    public AudioSource mainMenuVO3;
+    public AudioSource mainMenuVO4;
+
     public void PlayGame()
     {
         //StartCoroutine(LoadNarrative());
@@ -46,7 +51,9 @@ public class SceneChange : MonoBehaviour
         narrativeText.text =
             ("The human race has left the Earth poisoned by the ignorance of man’s technological advancements. " +
             "For centuries, humans have lived in space to survive until life on earth starts to prosper again.");
-        yield return new WaitForSeconds(12f);
+        mainMenuVO1.Play();
+        yield return new WaitForSeconds(14f);
+        mainMenuVO1.Stop();
         StartCoroutine(StartNarrative2());
     }
 
@@ -54,7 +61,9 @@ public class SceneChange : MonoBehaviour
     {
         narrativeText.text =
             ("Finally, after centuries of waiting, the Earth started to show signs of life. Grass, trees, oceans, and everything beautiful have been coming back after all this time.");
-        yield return new WaitForSeconds(10f);
+        mainMenuVO2.Play();
+        yield return new WaitForSeconds(14f);
+        mainMenuVO2.Stop();
         StartCoroutine(StartNarrative3());
     }
 
@@ -63,7 +72,9 @@ public class SceneChange : MonoBehaviour
         narrativeText.text =
             ("Unfortunately everyone left behind on earth have been infected by the toxic gases. Now they crave the flesh and blood of the humans " +
             "who left them to die all those years ago.");
+        mainMenuVO3.Play();
         yield return new WaitForSeconds(12f);
+        mainMenuVO3.Stop();
         StartCoroutine(StartNarrative4());
     }
 
@@ -71,7 +82,8 @@ public class SceneChange : MonoBehaviour
     {
         narrativeText.text =
             ("It now falls under the job of the Bio-Infected Neutraliser (BIN) Agent to take out all the infected and finally bring all humans back home.");
-        yield return new WaitForSeconds(10f);
+        mainMenuVO4.Play();
+        yield return new WaitForSeconds(12f);
         print("Changing Scene...");
         SceneManager.LoadScene(2);
     }
