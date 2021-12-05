@@ -5,10 +5,21 @@ using UnityEngine;
 public class Factory : MonoBehaviour
 {
     public GameObject robotPrefab;
+    public float coolDown = 100;
 
+    float count;
+    private void Start()
+    {
+        count = coolDown;
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) SpawnRobot();
+        count--;
+        if(count <= 0)
+        {
+            SpawnRobot();
+            count = coolDown;
+        }
     }
 
 

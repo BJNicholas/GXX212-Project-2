@@ -19,6 +19,7 @@ public class ZombieScript : MonoBehaviour
     {
         GameObject targetCharacter = null;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Friendly");
+        enemies = GameObject.FindGameObjectsWithTag("Structure");
         float closestDistance = Mathf.Infinity;
         foreach (GameObject character in enemies)
         {

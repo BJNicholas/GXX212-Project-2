@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db94be6ddb09b0409708ab9809c14e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 5
   robotCam: {fileID: 2800952000239511695}
   gun: {fileID: 3034326726159276125}
 --- !u!114 &8951289803340105828
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f7fc4395e3eda41a141a6ad60e3f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
 --- !u!136 &4365563322152336467
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -305,10 +305,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.35
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.6, z: 0}
 --- !u!54 &2127807620057734163
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -954,6 +954,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7626706464674718748}
     m_Modifications:
+    - target: {fileID: 2513150730285754082, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4746684630695208548, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: fireRate
       value: 5
@@ -984,11 +988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8031235772314198472, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.003162812
+      value: -0.0032
       objectReference: {fileID: 0}
     - target: {fileID: 8031235772314198472, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0006029981
+      value: -0.025
       objectReference: {fileID: 0}
     - target: {fileID: 8031235772314198472, guid: 1fcb30cd216733842ae3e72b69b33f92, type: 3}
       propertyPath: m_LocalRotation.w

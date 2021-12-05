@@ -13,6 +13,9 @@ public class uiManager : MonoBehaviour
     public GameObject ordersMenu;
     public GameObject deathScreen;
 
+    public Image staminaIndicator;
+    public Image healthIndicator;
+
     private void Start()
     {
         instance = this;
@@ -26,6 +29,8 @@ public class uiManager : MonoBehaviour
 
     private void Update()
     {
+        staminaIndicator.fillAmount = PlayerMovement.instance.stamina / 100;
+        healthIndicator.fillAmount = PlayerMovement.instance.gameObject.GetComponent<Character>().health / 100;
         if (Input.GetKeyDown(KeyCode.E)) OpenMenu(inventoryMenu);
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
