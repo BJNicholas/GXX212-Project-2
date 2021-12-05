@@ -15,6 +15,7 @@ public class SettingsMenu : MonoBehaviour
     //Audio sub-section
     public Slider music;
     public Slider effects;
+    public List<GameObject> audioEffectObjects; // Must be filled on awake/ before start
     //toggles
     public MotionBlur motionBlur = null;
     public AmbientOcclusion ambientOcc = null;
@@ -25,6 +26,15 @@ public class SettingsMenu : MonoBehaviour
     {
         sensitivity.value = MouseLook.instance.mouseSensitivity;
         fov.value = Camera.main.fieldOfView;
+        music.maxValue = GameObject.Find("MUSIC").GetComponent<AudioSource>().volume;
+        effects.maxValue = 0;
+        foreach(GameObject audioEffect in audioEffectObjects)
+        {
+            if(audioEffect.GetComponent<AudioSource>().volume > effects.maxValue)
+            {
+                effects.maxValue = audioEffect.GetComponent<AudioSource>().volume;
+            }
+        }
 
         volume.profile.TryGetSettings<MotionBlur>(out motionBlur);
         volume.profile.TryGetSettings<AmbientOcclusion>(out ambientOcc);
@@ -32,6 +42,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void Update()
     {
+        GameObject.Find("MUSIC").GetComponent<AudioSource>().volume = music.value;
         MouseLook.instance.mouseSensitivity = sensitivity.value;
         Camera.main.fieldOfView = fov.value;
         // all pp stuff under here
