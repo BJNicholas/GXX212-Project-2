@@ -56,7 +56,7 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator PlayTutorial2()
     {
-        logText.text = ("1. Movement in your EXO-Suit, \n 2. Learning How to Shoot your Weapon, \n 3. Controlling your Robot Minions, \n 4. Building & Crafting Tools or Structures.");
+        logText.text = ("1. Movement\n 2. How to Shoot your Weapon\n 3. Controlling your Robot Minions\n 4. Building and Crafting Tools or Structures.");
         yield return new WaitForSeconds(9.5f);
         StartCoroutine(PlayTutorial3());
     }
