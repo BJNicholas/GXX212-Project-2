@@ -21,6 +21,7 @@ public class Robot : MonoBehaviour
         robotCam.enabled = false;
         navAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player Body");
+        CollectResources();
     }
 
     private void FixedUpdate()
@@ -52,7 +53,7 @@ public class Robot : MonoBehaviour
         }
         else if (currentState == MinionManager.states.movingToPoint)
         {
-            MoveToPoint(new Vector3(3,0,5));
+            MoveToPoint(new Vector3(3, 0, 5));
         }
         else if (currentState == MinionManager.states.attacking)
         {
@@ -196,10 +197,13 @@ public class Robot : MonoBehaviour
         float closestDistance = Mathf.Infinity;
         foreach (GameObject resource in resources)
         {
-            if (Vector3.Distance(gameObject.transform.position, resource.transform.position) <= closestDistance)
+            if(resource.GetComponent<Resource>().health > 0)
             {
-                targetResource = resource;
-                closestDistance = Vector3.Distance(gameObject.transform.position, resource.transform.position);
+                if (Vector3.Distance(gameObject.transform.position, resource.transform.position) <= closestDistance)
+                {
+                    targetResource = resource;
+                    closestDistance = Vector3.Distance(gameObject.transform.position, resource.transform.position);
+                }
             }
         }
         if (targetResource == null)
@@ -235,7 +239,6 @@ public class Robot : MonoBehaviour
             }
             count = delay;
         }
-
     }
 
     void Reload()
