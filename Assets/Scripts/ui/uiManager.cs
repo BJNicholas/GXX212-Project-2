@@ -12,6 +12,7 @@ public class uiManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject ordersMenu;
     public GameObject deathScreen;
+    public GameObject winScreen;
 
     public Image staminaIndicator;
     public Image healthIndicator;
@@ -25,6 +26,7 @@ public class uiManager : MonoBehaviour
         pauseMenu.SetActive(false);
         ordersMenu.SetActive(false);
         deathScreen.SetActive(false);
+        winScreen.SetActive(false);
     }
 
     private void Update()

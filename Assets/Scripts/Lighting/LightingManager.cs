@@ -43,6 +43,14 @@ public class LightingManager : MonoBehaviour
         {
             UpdateLighting(timeOfDay / 24f);
         }
+
+        //WinCondition
+        if(daycount == 10)
+        {
+            uiManager.instance.winScreen.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void UpdateLighting(float timePercent)

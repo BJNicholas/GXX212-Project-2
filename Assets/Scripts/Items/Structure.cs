@@ -11,7 +11,17 @@ public class Structure : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
+            if(gameObject.name == "Generator")
+            {
+                uiManager.instance.deathScreen.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
