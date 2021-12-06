@@ -34,6 +34,7 @@ public class TimeOfDayMessage : MonoBehaviour
         if(currentDayCount<lightingMngr.daycount && nightTime == true)
         {
             StartCoroutine(MessagePopup());
+            currentDayCount++;
         }
 
         if(lightingMngr.timeOfDay >= 17 && active == true)
@@ -42,7 +43,7 @@ public class TimeOfDayMessage : MonoBehaviour
         }
 
         hour = Mathf.FloorToInt(lightingMngr.timeOfDay);
-        clockText.text = string.Format("{0:00}:{1:00}", hour, 0);
+        clockText.text = string.Format("{0:00}{1:00}", hour, 0);
         dayText.text = ("Day " + lightingMngr.daycount);
         
     }

@@ -94,7 +94,7 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator PlayRobotTutorial()
     {
-        logText.text = ("Robots will be created throughout the day \n TAB - Open Robot Orders \n With Scanner equipped: Left Click - Enter Robot Perspective" +
+        logText.text = ("With a Factory constructed: Robots will be created throughout the day \n TAB - Open Robot Orders \n With Scanner equipped: Left Click - Enter Robot Perspective" +
             "\n With Scanner equipped: Right Click - Exit Robot Perspective");
         tutorialIntro.SetActive(true);
         yield return new WaitForSeconds(8f);
