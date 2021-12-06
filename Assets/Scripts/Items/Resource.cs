@@ -22,7 +22,7 @@ public class Resource : MonoBehaviour
     }
     public void Death()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         //add more
     }
     private void OnTriggerEnter(Collider other)
