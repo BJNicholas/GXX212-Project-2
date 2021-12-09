@@ -58,5 +58,13 @@ public class ZombieScript : MonoBehaviour
             print("Ill blow you house down");
             collision.gameObject.transform.parent.GetComponent<Structure>().health -= damage;
         }
+        if (collision.gameObject.tag == "Friendly" || collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Character>().health -= damage;
+        }
+        if (collision.gameObject.GetComponent<Structure>())
+        {
+            collision.gameObject.GetComponent<Structure>().health -= damage;
+        }
     }
 }

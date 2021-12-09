@@ -10,10 +10,11 @@ public class PlaceObjectsOnTerrain : MonoBehaviour
     public float renderDistance = 5;
     TreeInstance[] originalTrees;
     List<TreeInstance> newTrees;
+    TerrainData mapData;
     private void Start()
     {
         instance = this;
-        TerrainData mapData = gameObject.GetComponent<Terrain>().terrainData;
+        mapData = gameObject.GetComponent<Terrain>().terrainData;
         originalTrees = mapData.treeInstances;
         newTrees = new List<TreeInstance>(originalTrees);
         DontDestroyOnLoad(gameObject);
@@ -26,7 +27,7 @@ public class PlaceObjectsOnTerrain : MonoBehaviour
 
     public void SpawnTreeObjects(GameObject character)
     {
-        TerrainData mapData = gameObject.GetComponent<Terrain>().terrainData;
+        //TerrainData mapData = gameObject.GetComponent<Terrain>().terrainData;
         foreach (TreeInstance treeIn in newTrees)
         {
             int objectIndex = treeIn.prototypeIndex;

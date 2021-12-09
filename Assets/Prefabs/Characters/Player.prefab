@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2267887933843518424}
+  stamina: 100
   gravity: -50
   jumpHeight: 3
   groundCheck: {fileID: 2267887933944905331}

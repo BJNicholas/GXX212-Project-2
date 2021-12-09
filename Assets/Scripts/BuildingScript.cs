@@ -29,17 +29,21 @@ public class BuildingScript : MonoBehaviour
             {
                 point = hit.point;
                 selectedItem.transform.position = point;
+                float distance = Vector3.Distance(uiManager.instance.playerHand.transform.position, hit.point);
+                if (Input.GetMouseButtonDown(0) && distance < 10f)
+                {
+                    PlaceObject();
+                }
             }
 
             if(Input.GetAxis("Mouse ScrollWheel") != 0f)
             {
                 selectedItem.transform.Rotate(Vector3.up * 100 * Input.GetAxis("Mouse ScrollWheel"));
             }
-
-
-            if (Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(1))
             {
-                PlaceObject();
+                Destroy(selectedItem);
+                selectedItem = null;
             }
         }
     }

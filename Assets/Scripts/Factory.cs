@@ -14,11 +14,14 @@ public class Factory : MonoBehaviour
     }
     private void Update()
     {
-        count--;
-        if(count <= 0)
+        if(RobotManager.instance.allRobots.ToArray().Length <= 15)
         {
-            SpawnRobot();
-            count = coolDown;
+            count--;
+            if (count <= 0)
+            {
+                SpawnRobot();
+                count = coolDown;
+            }
         }
     }
 
